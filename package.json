@@ -1,16 +1,39 @@
 {
-  "name": "pdf",
+  "name": "rest-printer",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Rest Printer API",
+  "main": "dist/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/app.js",
+    "dev": "nodemon dist/app.js",
+    "build": "tsc",
+    "watch": "tsc --watch"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/heseya/rest-printer.git"
+  },
+  "keywords": [
+    "PDF",
+    "Printer",
+    "HTML"
+  ],
+  "author": "Bartosz Juraszewski",
   "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/heseya/rest-printer/issues"
+  },
+  "homepage": "https://gitlab.com/heseya/rest-printer#readme",
   "dependencies": {
-    "concat-stream": "^1.6.2",
-    "express": "^4.16.4",
-    "puppeteer": "^1.9.0"
+    "concat-stream": "^2.0.0",
+    "express": "^4.17.1",
+    "puppeteer": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/concat-stream": "^1.6.0",
+    "@types/express": "^4.17.2",
+    "@types/puppeteer": "^2.0.0",
+    "nodemon": "^2.0.2",
+    "typescript": "^3.7.4"
   }
 }
