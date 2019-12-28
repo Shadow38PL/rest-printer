@@ -27,6 +27,7 @@
   "dependencies": {
     "concat-stream": "^2.0.0",
     "express": "^4.17.1",
+    "mysql2": "^2.1.0",
     "puppeteer": "^2.0.0"
   },
   "devDependencies": {
