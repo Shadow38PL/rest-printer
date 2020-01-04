@@ -1,7 +1,19 @@
-Rest Printer API
+# Rest Printer API
 
-npm run build - build project
-npm run watch - build project in watch mode
-
-npm start - run built project
-npm run dev - run project in watch mode
+## Commands
+Build project:
+```
+$ npm run build
+```
+Build project in watch mode:
+```
+$ npm run watch
+```
+Run built project:
+```
+$ npm run start
+```
+Run project in watch mode:
+```
+$ npm run dev
+```
