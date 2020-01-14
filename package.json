@@ -32,6 +32,8 @@
     "puppeteer": "^2.0.0"
   },
   "devDependencies": {
+    "@types/express": "^4.17.2",
+    "@types/puppeteer": "^2.0.0",
     "nodemon": "^2.0.2",
     "typescript": "^3.7.4"
   }
