@@ -46,8 +46,7 @@ const logDataUsage = async (apiKey: string, usage: number) : Promise<boolean> =>
     const db = await mysql.connect();
 
     let results = await db.query(
-        `SELECT id AS key_id, user_id FROM keys
-        WHERE key = ? AND deleted_at IS NULL`,
+        'SELECT `id` AS `key_id`, `user_id` FROM `keys` WHERE `key` = ? AND `deleted_at` IS NULL',
         [apiKey]
     );
 
@@ -55,8 +54,8 @@ const logDataUsage = async (apiKey: string, usage: number) : Promise<boolean> =>
     const userId = results[0]['user_id'];
 
     results = await db.query(
-        `INSERT INTO data_usage (date, user_id, key_id, usage)
-        VALUES (CURRENT_DATE(), ?, ?, ?) ON DUPLICATE KEY UPDATE usage = usage + ?`,
+        'INSERT INTO `data_usage` (`date`, `user_id`, `key_id`, `usage`) '
+        + 'VALUES (CURRENT_DATE(), ?, ?, ?) ON DUPLICATE KEY UPDATE `usage` = `usage` + ?',
         [userId, keyId, usage, usage]
     );
 
@@ -71,4 +70,4 @@ export default {
     getUserQuota,
     reduceUserQuota,
     logDataUsage
-}
+};
