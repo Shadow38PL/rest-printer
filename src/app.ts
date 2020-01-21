@@ -1,6 +1,7 @@
 import express from 'express';
 import 'express-async-errors';
 import bodyParser from 'body-parser';
+import dotenv from 'dotenv';
 
 import printer from './printer';
 import validator from './validator';
@@ -8,8 +9,8 @@ import printRouter from './routers/printRouter';
 import defaultController from './controllers/defaultController';
 import { errorHandler } from './errors';
 
+dotenv.config();
 printer.init();
-
 const app = express();
 
 app.use(validator.authorization);
