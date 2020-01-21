@@ -11,6 +11,8 @@ const getUserIdByKey = async (apiKey: string) : Promise<number | null> => {
     if (results.length != 1)
         return null;
 
+    await db.end();
+
     return results[0]['user_id'];
 }
 
@@ -25,6 +27,8 @@ const getUserQuota = async (userId: number) : Promise<number | null> => {
     if (results.length != 1)
         return null;
 
+    await db.end();
+
     return results[0]['quota'];
 }
 
@@ -38,6 +42,8 @@ const reduceUserQuota = async (userId: number, quota: number) : Promise<boolean>
 
     if (results.changedRows != 1)
         return false;
+
+    await db.end();
 
     return true;
 }
@@ -61,6 +67,8 @@ const logDataUsage = async (apiKey: string, usage: number) : Promise<boolean> =>
 
     if (results.affectedRows != 1)
         return false;
+
+    await db.end();
 
     return true;
 }

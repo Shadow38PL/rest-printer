@@ -22,8 +22,8 @@ const quotaCheck = async (req: Request, res: Response, next: NextFunction) => {
     const userId = res.locals.userId;
 
     const quota = await database.getUserQuota(userId);
-    
-    if (quota == 0 || quota == null)
+
+    if (quota == null || quota == 0)
         throw new QuotaError();
 
     res.locals.quota = quota;
@@ -31,7 +31,4 @@ const quotaCheck = async (req: Request, res: Response, next: NextFunction) => {
     next();
 }
 
-export default {
-    authorization,
-    quotaCheck
-}
+export default { authorization, quotaCheck };
