@@ -19,4 +19,4 @@ class Printer {
     }
 }
 
-export default Printer;
+export default new Printer();

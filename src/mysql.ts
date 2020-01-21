@@ -3,10 +3,10 @@ import mysql from 'promise-mysql';
 export default {
     async connect () {
         return mysql.createConnection({
-            host:'mysql4.mydevil.net',
-            user: 'm1600_printerapi',
-            password: 'uTHeTKIr7VYlgTLuZFwp',
-            database: 'm1600_printer'
+            host: process.env.DATABASE_HOST,
+            user: process.env.DATABASE_USER,
+            password: process.env.DATABASE_PASSWORD,
+            database: process.env.DATABASE_DATABASE
         });
     }
 }
