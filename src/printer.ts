@@ -4,7 +4,10 @@ class Printer {
     private browser!: Browser;
 
     async init () {
-        this.browser = await puppeteer.launch({args: ['--no-sandbox']});
+        this.browser = await puppeteer.launch({
+            args: ['--no-sandbox'],
+            executablePath: 'chromium-browser',
+        });
     }
 
     async print (html: string) : Promise<Buffer> {
